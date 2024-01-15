@@ -1,26 +1,43 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+<style scoped>
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.body {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+.header:hover {
+	color: rgb(153, 138, 147);
 }
 </style>
+<template>
+	<div id="app" class="container">
+		<RouterLink to="/" class="header">
+			<div class="text-center">
+				<h1 class="text-center mt-5">🚀 SWAPI 🚀</h1>
+				<p>Search for Star Wars characters</p>
+			</div>
+		</RouterLink>
+
+		<RouterView class="body" />
+	</div>
+</template>
+<script>
+import { RouterView } from "vue-router";
+export default {
+	name: "App",
+	components: {
+		RouterView
+	},
+}
+</script>
