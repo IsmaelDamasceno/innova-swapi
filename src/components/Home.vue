@@ -40,6 +40,9 @@
             </div>
         </div>
 
+        <div class="loading-container" v-if="results==0 && !loading">
+            <h1>No Results...</h1>
+        </div>
         <div v-if="loading" class="loading-container">
             <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>
